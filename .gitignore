@@ -4,6 +4,5 @@ crm
 db.sqlite3
 manage.py
 requirements.txt
-static
 staticfiles
 vercel.json
