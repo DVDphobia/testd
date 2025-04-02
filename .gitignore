@@ -1,2 +1,9 @@
-.venv
-ShionHouse.zip
+-rw-rw- ShionHouse.zip
+drwxr-xr- accounts
+drwxr-xr- crm
+-rw-rw-rw db.sqlite3
+-rw-rw-rw manage.py
+-rw-rw-rw requirements.txt
+drwxr-xr- static
+ staticfiles
+-rw-rw-rw vercel.json
