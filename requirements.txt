@@ -4,3 +4,5 @@ Pillow
 gunicorn
 psycopg2-binary 
 whitenoise
+django-ckeditor
+
