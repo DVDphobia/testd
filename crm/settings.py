@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-_t0$z72j4ahylztuzx(hxc4@5*93!l78$3moa+!orf51f7g$go
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','.vercel.com']
+ALLOWED_HOSTS = ['localhost','.vercel.com', 'https://testd-eu7g.onrender.com']
 
 
 # Application definition
@@ -52,6 +52,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware", 
 ]
 
 ROOT_URLCONF = 'crm.urls'
@@ -134,12 +136,13 @@ CKEDITOR_CONFIGS = {
         )
     },
 }
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Assuming you have this already
 CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 STATIC_URL = 'static/'
 
