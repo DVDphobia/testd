@@ -136,12 +136,20 @@ CKEDITOR_CONFIGS = {
         )
     },
 }
-STATICFILES_DIRS = [BASE_DIR / 'static']
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # This will collect all your static files into the 'staticfiles' folder
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',  # This tells Django where your custom static files (like CSS or JS) are located
+]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Assuming you have this already
 CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # For serving static files in production
 
 
 STATIC_URL = 'static/'
